@@ -24,12 +24,22 @@ void myfunc()
     std::cout << x << '\n';
 }
 
+// void TheInput(int &input)
+// {
+//     std::cout << "Guess a number: ";
+//     int input;
+//     std::cin >> input;
+// }
+
 int main()
 {
+    std::cout << "Guess a number: ";
+    int input;
+    std::cin >> input;
     AnotherClass::a;
     TheClass::x;
 
-    if (TheClass::x != 2)
+    if (input != 2)
     {
         for (int i = 0; i < 10; i++)
         {
