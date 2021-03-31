@@ -38,9 +38,11 @@ void mainClass()
 }
 
 void Move_Const();
+void MainDestruct();
 
 int main()
 {
+    MainDestruct();
     Move_Const();
     mainClass();
     WoreCaP o{2, 2};
@@ -115,36 +117,65 @@ void OperatorOverloading()
 }
 
 // ----------------------Over Loading Operator---------------------
-// #include <iostream>
+#include <iostream>
 
-// class MyClass {
-//   private:
-//   int x;
-//   double d;
-//   public:
-//   MyClass(int xx, double dd)
-//   : x{xx}, d{dd}
-//   {
+class MyClass
+{
+private:
+    int x;
+    double d;
 
-//   }
-//   MyClass &operator+=(const MyClass &rhs)
-//   {
-//     this->x += rhs.x;
-//     this->d += rhs.d;
-//     return *this;
-//   }
-//   friend MyClass operator+(MyClass lhs, const MyClass &rhs)
-//   {
-//     lhs += rhs;
-//     return lhs;
-//   }
-// };
+public:
+    MyClass(int xx, double dd)
+        : x{xx}, d{dd}
+    {
+    }
+    MyClass &operator+=(const MyClass &rhs)
+    {
+        this->x += rhs.x;
+        this->d += rhs.d;
+        return *this;
+    }
+    friend MyClass operator+(MyClass lhs, const MyClass &rhs)
+    {
+        lhs += rhs;
+        return lhs;
+    }
+};
 
-// int main() {
-//   MyClass myobject{1, 1.0};
-//   MyClass mysecondobject{2,2.0};
-//   MyClass theob = myobject + mysecondobject;
+void Destructor();
+void MainDestruct()
+{
+    Destructor();
+    MyClass myobject{1, 1.0};
+    MyClass mysecondobject{2, 2.0};
+    MyClass theob = myobject + mysecondobject;
 
-//   std::cout << "used the overloaded += operator\n" << std::endl;
+    std::cout << "used the overloaded += operator\n"
+              << std::endl;
+}
 
-// }
+// -------------------Destructor-----------
+class CClasseS
+{
+private:
+    int *p;
+
+public:
+    CClasseS()
+        : p{new int{123}}
+    {
+        std::cout << "Create a Pointer in the constructor.\n";
+    }
+
+    ~CClasseS()
+    {
+        delete p;
+        std::cout << "The constructor is deleted.\n";
+    }
+};
+
+void Destructor()
+{
+    CClasseS a;
+}
