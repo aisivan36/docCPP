@@ -1,6 +1,6 @@
 #include "multi.h"
 
-void MyNameSpace::MyNameFunc()
+void MyNameSpace::InsideSpace::MyNameFunc()
 {
     std::cout << "This from name space seperate file\n";
 }

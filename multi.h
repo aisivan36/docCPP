@@ -3,7 +3,10 @@
 #include <iostream>
 namespace MyNameSpace
 {
-    void MyNameFunc();
+    namespace InsideSpace
+    {
+        void MyNameFunc();
+    }
 }
 
 void myfunction();
