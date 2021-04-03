@@ -1,4 +1,5 @@
 #include <iostream>
+#include "template.h"
 
 template <typename T, typename U>
 void myfunction(T t, U u)
@@ -34,7 +35,7 @@ public:
     }
 };
 
-void Another_template_class();
+// void Another_template_class(); // already called with header
 
 void MainTemplateClass()
 {
