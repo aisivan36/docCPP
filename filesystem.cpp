@@ -4,9 +4,9 @@ int main()
 {
     std::filesystem::path folderpath = "/home/ivan/Downloads/testc++";
     if (
-        std::filesystem::create_directory(folderpath))
+        std::filesystem::remove(folderpath))
     {
-        std::cout << "The path: " << folderpath << " exists.";
+        std::cout << "The path: " << folderpath << " was removed...";
     }
     else
     {
