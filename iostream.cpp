@@ -9,8 +9,9 @@ int main()
     std::getline(std::cin, enter);
 
     // std::fstream fs{enter};
-    // std::string s;
-    std::string esnter;
+    std::string s;
+    // std::string esnter;
+    // char s;
 
     // for write
     std::cout << "Write something to this file: : ";
@@ -18,22 +19,52 @@ int main()
     std::getline(std::cin, writes);
     std::fstream fs{
         enter,
-        std::ios::app};
+        std::ios::app | std::ios::in};
     // write
     fs << writes;
+    fs.close();
     // Read
-    std::string writes;
+    // std::ifstream read{enter};
+    fs;
+    fs >> s;
+    fs.clear();
 
-    // fs >> enter;
+    std::getline(fs, s);
+    std::cout << s << '\n';
+
+    // std::ifstream read{enter};
+    //     std::string s;
+    //     read >> s;
+    //     std::getline(read, s);
+    //     std::cout << s << '\n';
+
+    // std::cout << "Do you wanna read this file? 0(no) 1(yes) ";
+    // bool read;
+    // std::cin >> read;
+
+    // if (read == true)
+    // {
+
+    //     std::ifstream read{enter};
+    //     std::string s;
+    //     read >> s;
+
+    //     std::getline(read, s);
+    //     std::cout << s << '\n';
+    // }
+    // else
+    // {
+    //     return 0;
+    // }
 
     // //     // Getline for drawing on the same line
     // std::getline(fs, enter);
     // std::cout << enter << '\n';
 
-    while (fs >> writes)
-    {
-        // Getline for drawing on the same line
-        std::getline(fs, writes);
-        std::cout << writes << '\n';
-    }
+    // while (fs >> writes)
+    // {
+    //     // Getline for drawing on the same line
+    //     std::getline(fs, writes);
+    //     std::cout << writes << '\n';
+    // }
 }
