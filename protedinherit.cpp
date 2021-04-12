@@ -57,7 +57,8 @@ void game() {
 }
 
 void asking() {
-  std::string ask = "";
+  std::string ask = ""; // do not use char for do while within cin inside of it,
+                        // it leads to cause warning issue on compiler.
 
   do {
 
