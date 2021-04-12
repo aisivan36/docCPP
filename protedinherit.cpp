@@ -90,6 +90,8 @@ void sure() {
   } else if (realy == 'y') {
     std::cout << "see you!\n";
     return; // stop at here
+    
+//     break; // break keyword: Is used to terminate the execution of any looping structures(for loop, while, do_while) immediately. If it is used inside in function or method, it will not terminate the function just the looping structure will be terminated
   }
 }
 
