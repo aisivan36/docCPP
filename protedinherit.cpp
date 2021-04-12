@@ -57,25 +57,25 @@ void game() {
 }
 
 void asking() {
-  char ask;
+  std::string ask = "";
 
   do {
 
-    if (ask == 'n') {
+    if (ask == "n") {
       sure();
     } else {
 
       std::cout << "Would you like to play again? (y/n): ";
       std::cin >> ask;
 
-      if (ask == 'n') {
+      if (ask == "n") {
         return sure(); // exit throw onto sure
-      } else if (ask == 'y') {
+      } else if (ask == "y") {
         return game(); // The same as above
       }
     }
 
-  } while (ask != 'y' && 'n');
+  } while (ask != "y" && "n");
 }
 
 void sure() {
