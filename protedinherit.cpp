@@ -50,18 +50,51 @@ void game() {
   } while (input != 'y' && 'n');
 }
 
-int main() {
-  game();
+void sure();
+void asking();
 
+void asking() {
   char ask;
+
   do {
-    std::cout << "Would you like to play again? (y/n): ";
-    std::cin >> ask;
 
     if (ask == 'n') {
+      sure();
+    } else {
+      std::cout << "Would you like to play again? (y/n): ";
+      std::cin >> ask;
+
+      if (ask == 'n') {
+        sure();
+      } else {
+        game();
+      }
+    }
+
+  } while (ask != 'y' && 'n');
+}
+
+int main() {
+  game();
+  asking();
+}
+
+void sure() {
+  // still have bugs on this scope when asking to leave then press yes it does
+  // not stop
+  char sure;
+  std::cout << "are you sure to leave? (y/n) : ";
+  std::cin >> sure;
+  do {
+
+    if (sure == 'y') {
+      std::cout << "see you!\n";
+      // The brak does not work I didn't know how to fix this..!
       break;
     }
-    game();
 
-  } while (ask == 'y');
+    else if (sure == 'n') {
+      asking();
+    }
+  } while (sure != 'y' && 'n');
 }
