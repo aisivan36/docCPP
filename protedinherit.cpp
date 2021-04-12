@@ -46,7 +46,7 @@ void game() {
       std::cout << "Skill: " << TheJob.getJob() << '\n';
       std::cout << "Status: " << TheJob.status << '\n';
       std::cout << "Experienced: " << TheJob.getExpr() << " Year(s)\n";
-      asking();
+      return asking();
     } else if (input == 'n') {
       std::cout << "Have a nice day sir!\n";
       //   break;
