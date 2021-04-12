@@ -25,6 +25,7 @@ class Question {
 public:
   void question() { std::cout << "Are you programmer? (y/n): "; }
 };
+void sure();
 
 void game() {
   char input;
@@ -44,7 +45,8 @@ void game() {
       std::cout << "Experienced: " << TheJob.getExpr() << " Year(s)\n";
     } else if (input == 'n') {
       std::cout << "Have a nice day sir!\n";
-      break;
+      //   break;
+      sure();
     }
 
   } while (input != 'y' && 'n');
@@ -52,7 +54,6 @@ void game() {
 
 void asking();
 
-void sure();
 void asking() {
   char ask;
 
@@ -81,21 +82,34 @@ void sure() {
   // not stop
   char sure;
   do {
-    do {
+    // do {
+    //   std::cout << "are you sure to leave? (y/n) : ";
+    //   std::cin >> sure;
+    //   while (sure == 'y') {
+    //     std::cout << "see you!\n";
+    //     break;
+    //   }
+    //   //   if (sure == 'y') {
+    //   //     std::cout << "see you!\n";
+    //   //     // The brak does not work I didn't know how to fix this..!
+    //   //     break;
+    //   //   }
 
-      std::cout << "are you sure to leave? (y/n) : ";
-      std::cin >> sure;
-      if (sure == 'y') {
-        std::cout << "see you!\n";
-        // The brak does not work I didn't know how to fix this..!
-        break;
-      }
+    // } while (sure == 'y');
 
-    } while (sure == 'y');
+    std::cout << "are you sure to leave? (y/n) : ";
+    std::cin >> sure;
+    // while (sure == 'y') {
+    //   std::cout << "see you!\n";
+
+    //   break;
+    // }
 
     if (sure == 'n') {
       asking();
     } else if (sure == 'y') {
+      std::cout << "see you!\n";
+
       break;
     }
   } while (sure != 'y' && 'n');
