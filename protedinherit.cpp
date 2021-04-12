@@ -64,16 +64,15 @@ void asking() {
     if (ask == 'n') {
       sure();
     } else {
-      do {
-        std::cout << "Would you like to play again? (y/n): ";
-        std::cin >> ask;
 
-        if (ask == 'n') {
-          return sure(); // For breaking at here
-        } else if (ask == 'y') {
-          game();
-        }
-      } while (ask == 'y');
+      std::cout << "Would you like to play again? (y/n): ";
+      std::cin >> ask;
+
+      if (ask == 'n') {
+        return sure(); // exit throw onto sure
+      } else if (ask == 'y') {
+        return game(); // The same as above
+      }
     }
 
   } while (ask != 'y' && 'n');
@@ -90,9 +89,12 @@ void sure() {
   } else if (realy == 'y') {
     std::cout << "see you!\n";
     return; // stop at here
-    
-//     Do not use break on this scope. keep that in mind.
-//     break; // break keyword: Is used to terminate the execution of any looping structures(for loop, while, do_while) immediately. If it is used inside in function or method, it will not terminate the function just the looping structure will be terminated
+
+    //     Do not use break on this scope. keep that in mind.
+    //     break; // break keyword: Is used to terminate the execution of any
+    //     looping structures(for loop, while, do_while) immediately. If it is
+    //     used inside in function or method, it will not terminate the function
+    //     just the looping structure will be terminated
   }
 }
 
