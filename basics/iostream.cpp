@@ -13,8 +13,8 @@ int main() {
   // char s;
 
   // for write
-  std::cout << "Write something to this file: : ";
-  std::string writes;
+  std::cout << "Write something to this file: ";
+  std::string writes = "- ";
   std::getline(std::cin, writes);
   std::fstream fs{enter, std::ios::app | std::ios::in};
   // write
