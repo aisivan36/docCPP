@@ -38,7 +38,7 @@ int main() {
   Player frank{"Frank"};
   Player villain{"Ivan"};
 
-  // Accessing Struct or Class member
+  // Accessing Struct or Class member wihtin a raw pointer
   Player *Pointer = new Player;
   // Can be either
   (*Pointer).car = "Peugeot";
@@ -48,6 +48,9 @@ int main() {
   std::cout << "Price: " << Pointer->price << "$ Age: " << Pointer->year
             << " Year-old. Brand: " << Pointer->car << '\n';
   Pointer->listen("Nothing to say");
+
+  // Always delete a raw pointer to avoid memory leaks
+  delete Pointer;
 
   return 0;
 }
