@@ -1,10 +1,12 @@
 #include <iostream>
 #include <string>
 
-template <typename T> void Dash(T value) { std::cout << value << std::endl; }
+template <typename T>
+void Dash(T value) { std::cout << value << std::endl; }
 
 void switch_case();
-int main() {
+int main()
+{
   switch_case();
   Dash(7);
   Dash('r');
@@ -12,21 +14,24 @@ int main() {
   Dash("It runs just fine.");
 }
 
-void Guess() {
+void Guess()
+{
   std::string input = "";
   std::cout << "Type something: ";
   std::getline(std::cin, input);
   std::cout << "You typed: " << input << '\n';
 }
 
-void switch_case() {
+void switch_case()
+{
 
   Guess();
   std::cout << "Guess pick one A B C D F: ";
   char grade;
   std::cin >> grade;
 
-  switch (grade) {
+  switch (grade)
+  {
   case 'A':
     std::cout << "Excellent!" << '\n';
     break;

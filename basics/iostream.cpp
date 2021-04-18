@@ -2,7 +2,8 @@
 #include <iostream>
 #include <string>
 
-int main() {
+int main()
+{
   std::cout << "Enter a text file that you can wanna read.: ";
   std::string enter = "";
   std::getline(std::cin, enter);
@@ -39,7 +40,8 @@ int main() {
   std::string read;
   std::cin >> read;
 
-  if (read == "y") {
+  if (read == "y")
+  {
 
     std::ifstream read{enter};
     std::string s;
@@ -47,7 +49,9 @@ int main() {
 
     std::getline(read, s);
     std::cout << ' ' << s << '\n';
-  } else {
+  }
+  else
+  {
     return 0;
   }
 
