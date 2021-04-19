@@ -52,7 +52,8 @@ int main() {
   FirstCaller();
   SecondCaller();
 
-  // Pointer, Class Destructor();
+  std::cout << "================================" << std::endl;
+  std::cout << "// Pointer, Class Destructor();" << std::endl;
   MyClass *Destruct = new MyClass;
   Destruct->set_name("First Pointer");
 
