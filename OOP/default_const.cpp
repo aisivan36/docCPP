@@ -27,8 +27,10 @@ public:
   }
 
   //   Overloaded Constructor
+  // Declare Constructor here to move outside the class
   MyClass(std::string a, int b, int c);
 
+  // Overloaded Constructor inside the class
   //   MyClass(std::string name_value, int age_value, int xp_value) {
   //     name = name_value;
   //     age = age_value;
@@ -36,11 +38,8 @@ public:
   //   }
 };
 
-MyClass::MyClass(std::string a, int b, int c) {
-  name = a;
-  age = b;
-  xp = c;
-}
+// Define the Constructor outside the class, with initialization list class
+MyClass::MyClass(std::string a, int b, int c) : name{a}, age{b}, xp{c} {}
 
 int main() {
   // Call the default Constructor
