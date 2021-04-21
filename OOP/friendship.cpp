@@ -21,12 +21,42 @@ public:
   }
 };
 
+class AnotherClass;
+
+class TheClass {
+public:
+  void TheFuc(AnotherClass &); // function ref
+};
+
+class AnotherClass {
+private:
+  int b;
+
+public:
+  AnotherClass() { b = 13; }
+  friend void TheClass::TheFuc(AnotherClass &x); // Friend function
+};
+
+void TheClass::TheFuc(AnotherClass &x) { std::cout << "B::b = " << x.b; }
+
+void anotherfunc() {
+  TheClass obj;
+  AnotherClass obj2;
+  // Initialize obj2 into obj
+  obj.TheFuc(obj2);
+}
+
 int main() {
+  anotherfunc();
+
+  std::cout << "\n=========" << '\n';
+
   // Define MyClas to obj
   MyClass obj;
   //   Define YourClass to obj2
   YourClass obj2;
   //   Initialize obj2 into obj
   obj2.Func(obj);
+
   return 0;
 }
