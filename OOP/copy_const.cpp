@@ -13,6 +13,8 @@ public:
   {
     std::cout << "User defined copy constructor invoked";
   }
+  // Destructed 2 times by calling copy constructor
+  ~MainClass() { std::cout << "Destructed"; }
 };
 
 int main() {
