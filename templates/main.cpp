@@ -29,7 +29,7 @@ template <typename T> void my_swap(T &a, T &b) {
 int main() {
 
   // Call swap
-  std::string x{"sowah"};
+  std::string x{"Scotish"};
   std::string y{"Swedish"};
   std::cout << x << ", and " << y << std::endl;
   my_swap(x, y);
