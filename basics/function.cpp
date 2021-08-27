@@ -3,7 +3,7 @@
 
 int mysquarednumber(int x, int y); // function declaration
 
-void returnFunc();
+void returnFunc(); // Function return declaration
 
 int main() {
   int myresult = mysquarednumber(2, 4); // a call to the function
