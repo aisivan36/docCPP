@@ -26,7 +26,7 @@ int main() {
   // With the arrow operator -> we invoke the appropriate version of
   // (Virtual)function
   o->dowork();
-  //   delete o;
+  delete o;
 
   simplePolymorphism();
 }
