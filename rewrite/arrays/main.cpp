@@ -9,4 +9,5 @@ int main() {
   intArr[2] = 18; // change the value of 8
   charArr[0] = 'q';
   std::cout << "The intArray is: " << intArr[2] << std::endl;
+  std::cout << "The intArray is: " << charArr[0] << std::endl;
 }
